@@ -10,15 +10,26 @@ import com.piyal.rapidfeast.data.model.UserModel
 import com.piyal.rapidfeast.utils.AppConstants
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class PreferencesHelper(context: Context) : AppPreferencesHelper {
+@Singleton
+class PreferencesHelper @Inject constructor(
+    @ApplicationContext private val context: Context
+) : AppPreferencesHelper {
 
-    private val loginPreferences: SharedPreferences =
-            context.getSharedPreferences(AppConstants.LOGIN_PREFS, MODE_PRIVATE)
-    private val customerPreferences: SharedPreferences =
-            context.getSharedPreferences(AppConstants.CUSTOMER_PREFS, MODE_PRIVATE)
-    private val cartPreferences: SharedPreferences =
-            context.getSharedPreferences(AppConstants.CART_PREFERENCES, MODE_PRIVATE)
+    private val loginPreferences: SharedPreferences by lazy {
+        context.getSharedPreferences(AppConstants.LOGIN_PREFS, MODE_PRIVATE)
+    }
+
+    private val customerPreferences: SharedPreferences by lazy {
+        context.getSharedPreferences(AppConstants.CUSTOMER_PREFS, MODE_PRIVATE)
+    }
+
+    private val cartPreferences: SharedPreferences by lazy {
+        context.getSharedPreferences(AppConstants.CART_PREFERENCES, MODE_PRIVATE)
+    }
 
     override var name: String?
         get() = customerPreferences.getString(AppConstants.CUSTOMER_NAME, null)

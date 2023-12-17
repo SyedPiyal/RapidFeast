@@ -1,4 +1,4 @@
-package com.food.ordering.zinger.data.retrofit
+package com.piyal.rapidfeast.data.retrofit
 
 import retrofit2.Retrofit
 

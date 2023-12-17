@@ -1,8 +1,11 @@
-package com.food.ordering.zinger.data.retrofit
+package com.piyal.rapidfeast.data.retrofit
 
-import retrofit2.Retrofit
 
-class ShopRepository(retrofit: Retrofit) {
-    private val services = retrofit.create(CustomApi::class.java)
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class ShopRepository @Inject constructor(private val services: CustomApi) {
+
     suspend fun getShops(placeId: String) = services.getShops(placeId)
 }

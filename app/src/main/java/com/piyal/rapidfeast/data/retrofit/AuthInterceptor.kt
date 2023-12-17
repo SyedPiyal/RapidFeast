@@ -1,11 +1,10 @@
-package com.food.ordering.zinger.data.retrofit
+package com.piyal.rapidfeast.data.retrofit
 
 import android.content.Context
-import com.food.ordering.zinger.data.local.PreferencesHelper
-import com.food.ordering.zinger.utils.AppConstants
+import com.piyal.rapidfeast.data.local.PreferencesHelper
 import okhttp3.Interceptor
 import okhttp3.Response
-import java.net.HttpURLConnection.HTTP_UNAUTHORIZED
+
 
 class AuthInterceptor(val context: Context, val preferences: PreferencesHelper) :
         Interceptor {

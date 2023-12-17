@@ -1,8 +1,8 @@
-package com.food.ordering.zinger.data.retrofit
+package com.piyal.rapidfeast.data.retrofit
 
-import com.food.ordering.zinger.data.model.OrderStatusRequest
-import com.food.ordering.zinger.data.model.PlaceOrderRequest
-import com.food.ordering.zinger.data.model.RatingRequest
+import com.piyal.rapidfeast.data.model.OrderStatusRequest
+import com.piyal.rapidfeast.data.model.PlaceOrderRequest
+import com.piyal.rapidfeast.data.model.RatingRequest
 import retrofit2.Retrofit
 
 class OrderRepository(retrofit: Retrofit) {

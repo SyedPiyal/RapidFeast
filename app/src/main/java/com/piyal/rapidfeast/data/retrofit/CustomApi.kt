@@ -1,6 +1,6 @@
-package com.food.ordering.zinger.data.retrofit
+package com.piyal.rapidfeast.data.retrofit
 
-import com.food.ordering.zinger.data.model.*
+import com.piyal.rapidfeast.data.model.*
 import retrofit2.http.*
 
 interface CustomApi {
